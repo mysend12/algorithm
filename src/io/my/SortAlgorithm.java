@@ -9,6 +9,83 @@ import java.util.stream.Stream;
 
 public class SortAlgorithm {
 
+
+
+
+    /*
+     * 병합 정렬
+     * '분할 정복' 알고리즘
+     * 평균 시간 복잡도 O(N * logN)
+     */
+    public int[] mergeSort(int[] numberArray) {
+        int[] array = numberArray.clone();
+        int[] cloneArray = new int[array.length];
+        mergeSortDivideLogic(array, cloneArray, 0, array.length - 1);
+        return array;
+    }
+
+    /**
+     *
+     * @param numberArray 정렬이 필요한 배열
+     * @param cloneArray 정렬을 위한 배열 복사본
+     * @param start 시작점
+     * @param end 끝점
+     */
+    private void mergeSortDivideLogic(int[] numberArray, int[] cloneArray, int start, int end) {
+        // 크기가 1보다 큰 경우
+        if (start < end) {
+            int middle = (start + end) / 2;
+
+            // 배열을 왼쪽, 오른쪽으로 나눈다.
+            mergeSortDivideLogic(numberArray, cloneArray, start, middle);
+            mergeSortDivideLogic(numberArray, cloneArray, middle + 1, end);
+
+            // 정렬된 두 개의 배열을 합쳐준다.
+            mergeSortMergeLogic(numberArray, cloneArray, start, middle, end);
+        }
+    }
+
+
+    /**
+     * @param numberArray 정렬이 필요한 배열
+     * @param cloneArray 정렬을 위한 예비 배열
+     * @param leftStart: 첫번째 배열의 시작점
+     * @param leftEnd: 첫번째 배열의 끝점 (leftEnd + 1: 두번째 배열의 시작점)
+     * @param rightEnd: 두번째 배열의 끝점
+     * @return
+     */
+    private void mergeSortMergeLogic(int[] numberArray, int[] cloneArray, int leftStart, int leftEnd, int rightEnd) {
+        int i = leftStart;
+        int j = leftEnd + 1;
+        int k = leftStart;
+
+        // 작은 순서대로 배열에 삽입
+        while (i <= leftEnd && j <= rightEnd) {
+            if (numberArray[i] <= numberArray[j]) {
+                cloneArray[k++] = numberArray[i++];
+            } else {
+                cloneArray[k++] = numberArray[j++];
+            }
+        }
+
+        // 이 경우, i 값이 남거나 j 값이 남거나 둘 중 하나의 값이 남게된다.
+        // 남은 데이터 삽입
+        if (i > leftEnd) {
+            for (int t = j; t <= rightEnd; t++) {
+                cloneArray[k++] = numberArray[t];
+            }
+        } else {
+            for (int t = i; t <= leftEnd; t++) {
+                cloneArray[k++] = numberArray[t];
+            }
+        }
+
+        // 정렬된 배열을 삽입
+        for (int t = leftStart; t <= rightEnd; t++) {
+            numberArray[t] = cloneArray[t];
+        }
+    }
+
     /*
     * 대표적인 '분할 정복' 알고리즘으로 평균 속도는 O(N * logN),
     * 최악의 경우(이미 정렬이 되어 있는 경우) 시간 복잡도는 O(N^2)

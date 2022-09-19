@@ -7,9 +7,7 @@ import java.util.stream.IntStream;
 public class Main {
 
     public static void main(String[] args) {
-        IntStream.range(0, 100).forEach(num -> {
-            sortForEach();
-        });
+        IntStream.range(0, 100).forEach(num -> sortForEach());
     }
 
     private static void sortForEach() {
@@ -17,7 +15,7 @@ public class Main {
 
         SortAlgorithm sortAlgorithm = new SortAlgorithm();
 
-        int[] sortNumberArray = sortAlgorithm.quickSort(numberArray);
+        int[] sortNumberArray = sortAlgorithm.mergeSort(numberArray);
 
         StringBuilder stringBuilder = new StringBuilder();
 

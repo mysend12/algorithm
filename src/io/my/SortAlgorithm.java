@@ -12,11 +12,11 @@ public class SortAlgorithm {
 
 
 
-    /*
-     * 병합 정렬
-     * '분할 정복' 알고리즘
-     * 평균 시간 복잡도 O(N * logN)
-     */
+    @BigONotation(
+            bestBigO = "O(N * logN)",
+            averageBigO = "O(N * logN)",
+            worstBigO = "O(N * logN)",
+            description = "병랍 정렬 - 분할 정복 알고리즘")
     public int[] mergeSort(int[] numberArray) {
         int[] array = numberArray.clone();
         int[] cloneArray = new int[array.length];
@@ -86,10 +86,14 @@ public class SortAlgorithm {
         }
     }
 
-    /*
-    * 대표적인 '분할 정복' 알고리즘으로 평균 속도는 O(N * logN),
-    * 최악의 경우(이미 정렬이 되어 있는 경우) 시간 복잡도는 O(N^2)
-    * */
+    @BigONotation(
+            bestBigO = "O(N * logN)",
+            averageBigO = "O(N * logN)",
+            worstBigO = "O(N^2)",
+            description =
+                    "퀵 정렬 - 분할 정복 알고리즘, 평균적으로 가장 빠른 정렬 알고리즘" +
+                    "다만, 이미 정렬이 되어있거나 같은 수만으로 이루어져 있을경우 정렬 속도가 느리다."
+    )
     public int[] quickSort(int[] numberArray) {
         int[] array = numberArray.clone();
 //        quickSortWithRecursive(array, 0, numberArray.length - 1);
@@ -209,6 +213,14 @@ public class SortAlgorithm {
     시간 복잡도는 선택 정렬 및 버블 정렬과 동일하지만, 연산의 수행이 적기 때문에 2개의 정렬보다는 더 빠르다.
     특히, 이미 거의 정렬된 경우에는 다른 시간 복잡도가 더 효율적인 정렬 알고리즘보다 빠르다..
     */
+    @BigONotation(
+            bestBigO = "O(N^2)",
+            averageBigO = "O(N^2)",
+            worstBigO = "O(N^2)",
+            description =
+                    "삽입 정렬, 연산의 수행이 적어 버블 정렬이나 선택 정렬보다 빠르다." +
+                    "또한, 정렬이 거의 되어 있는 집합의 경우 다른 효율적인 정렬 알고리즘보다 빠르다."
+    )
     public int[] insertionSort(int[] numberArray) {
         int[] array = numberArray.clone();
 
@@ -243,6 +255,12 @@ public class SortAlgorithm {
 
     시간 복잡도는 선택 정렬과 동일하지만, 비교를 할 때마다 값을 변경해줘야 한다는 단점이 있어서 버블 정렬이 더 느리다.
      */
+    @BigONotation(
+            bestBigO = "O(N^2)",
+            averageBigO = "O(N^2)",
+            worstBigO = "O(N^2)",
+            description = "버블 정렬. 느리지만 구현이 쉽다."
+    )
     public int[] bubbleSort(int[] numberArray) {
         int[] array = numberArray.clone();
         for (int index = 0; index < array.length; index++) {
@@ -262,6 +280,12 @@ public class SortAlgorithm {
     선택 정렬의 시간 복잡도는 O(N^2)
     수행 시간: N * (N + 1) / 2 => N * N => O(N*N)
      */
+    @BigONotation(
+            bestBigO = "O(N^2)",
+            averageBigO = "O(N^2)",
+            worstBigO = "O(N^2)",
+            description = "선택 정렬. 느리지만 구현이 쉽다."
+    )
     public int[] selectionSort(int[] numberArray) {
         int[] array = numberArray.clone();
         int currentNumberIndex = 0;

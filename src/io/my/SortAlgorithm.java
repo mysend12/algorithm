@@ -10,13 +10,61 @@ import java.util.stream.Stream;
 public class SortAlgorithm {
 
 
+    @BigONotation(
+            bestBigO = "O(N * logN)",
+            averageBigO = "O(N * logN)",
+            worstBigO = "O(N * logN)",
+            description = "힙 정렬 - 힙 트리 구조를 이용하는 정렬 방법")
+    public int[] heapSort(int[] numberArray) {
+        int[] heap = numberArray.clone();
 
+        // 최대힙 만들기
+        for (int index = heap.length/2 - 1; index >=0; index--) {
+            heapify(heap, heap.length, index);
+        }
+
+        // 정렬하기
+        for (int index = heap.length - 1; index>=0; index--) {
+            swap(heap, index, 0);
+            heapify(heap, index, 0);
+        }
+
+        return heap;
+    }
+
+    private void heapify(int[] heap, int size, int pNode) {
+        int parent = pNode;
+        int lNode = pNode * 2 + 1; // 왼쪽 자식 노드
+        int rNode = pNode * 2 + 2; // 오른쪽 자식 노드
+        int childNode = 0;
+
+        if (size > lNode && size > rNode) {
+            childNode = heap[lNode] > heap[rNode] ? lNode : rNode;
+        } else if (size > lNode && size <= rNode) {
+            childNode = lNode;
+        } else if (size <= lNode && size > rNode) {
+            childNode = rNode;
+        } else {
+            // 자식 노드가 없으면 교환할 필요가 없다.
+            return;
+        }
+
+        if (heap[parent] < heap[childNode]) {
+            parent = childNode;
+        }
+
+        if (parent != pNode) {
+            swap(heap, pNode, parent);
+            heapify(heap, size, parent);
+        }
+
+    }
 
     @BigONotation(
             bestBigO = "O(N * logN)",
             averageBigO = "O(N * logN)",
             worstBigO = "O(N * logN)",
-            description = "병랍 정렬 - 분할 정복 알고리즘")
+            description = "병합 정렬 - 분할 정복 알고리즘")
     public int[] mergeSort(int[] numberArray) {
         int[] array = numberArray.clone();
         int[] cloneArray = new int[array.length];

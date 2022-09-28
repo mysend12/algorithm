@@ -1,19 +1,63 @@
 package io.my.backjoon;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Main1697 {
 
     public static void main(String[] args) {
-//        Scanner scanner = new Scanner(System.in);
-//        List<Integer> input = Arrays.stream(scanner.nextLine().split(" ")).map(Integer::parseInt).collect(Collectors.toList());
-        List<Integer> input = List.of(1248, 94568);
-        int sisterPosition = input.get(0);
-        int brotherPosition = input.get(1);
+        Scanner scanner = new Scanner(System.in);
+        List<Integer> input = Arrays.stream(scanner.nextLine().split(" ")).map(Integer::parseInt).collect(Collectors.toList());
+        System.out.println(solutionBFS(input.get(0), input.get(1)));
+    }
 
+    private static int solutionBFS(int a, int b) {
+        Queue<Integer> queue = new LinkedList<>();
+        queue.add(a);
+
+        int size = 100_001;
+        int[] passArray = new int[size];
+        passArray[a] = 1;
+
+        if (a == b) return 0;
+
+        int index = 0;
+        int indexCount = 1;
+        int nextIndexCount = 0;
+        while (!queue.isEmpty()) {
+            int position = queue.poll();
+            if (position + 1 < 100_001 && passArray[position + 1] == 0) {
+                if (position + 1 == b) {
+                    return index + 1;
+                }
+                nextIndexCount++;
+                queue.add(position + 1);
+            }
+            if (position - 1 >= 0 && passArray[position - 1] == 0) {
+                if (position - 1 == b) {
+                    return index + 1;
+                }
+                nextIndexCount++;
+                queue.add(position - 1);
+            }
+            if (position * 2 < size && passArray[position * 2] == 0) {
+                if (position * 2 == b) {
+                    return index + 1;
+                }
+                nextIndexCount++;
+                queue.add(position * 2);
+            }
+            passArray[position] = 1;
+            if (--indexCount == 0) {
+                index++;
+                indexCount = nextIndexCount;
+                nextIndexCount = 0;
+            }
+        }
+        return -1;
+    }
+
+    private static int solution(int sisterPosition, int brotherPosition) {
         int index = 0;
 
         int divisionBrotherPosition = brotherPosition / 2;
@@ -54,11 +98,11 @@ public class Main1697 {
                 }
             }
         } while(sisterPosition != brotherPosition);
-        System.out.println(index);
+        return index;
     }
 
     private static int plusIndex(int position, Integer index) {
-        System.out.println(index+ ": " + position);
+//        System.out.println(index+ ": " + position);
         return ++index;
     }
 }

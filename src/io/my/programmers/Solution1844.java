@@ -35,24 +35,27 @@ public class Solution1844 {
 
             if (x-1 >= 0 && maps[y][x-1] == 1 && passPosition[coordinate.y()][coordinate.x() - 1] == 0) {
                 queue.add(new Coordinate(x-1, y));
+                passPosition[coordinate.y()][coordinate.x() - 1] = 1;
                 nextIndexCount++;
             }
             if (y-1 >= 0 && maps[y-1][x] == 1 && passPosition[coordinate.y() - 1][coordinate.x()] == 0) {
                 queue.add(new Coordinate(x, y-1));
+                passPosition[coordinate.y() - 1][coordinate.x()] = 1;
                 nextIndexCount++;
             }
             if (width >= x+1 && maps[y][x+1] == 1 && passPosition[coordinate.y()][coordinate.x() + 1] == 0) {
                 if (x+1 == width && y == height) return index + 1;
+                passPosition[coordinate.y()][coordinate.x() + 1] = 1;
                 queue.add(new Coordinate(x+1, y));
                 nextIndexCount++;
             }
             if (height >= y+1 && maps[y+1][x] == 1 && passPosition[coordinate.y() + 1][coordinate.x()] == 0) {
                 if (x == width && y+1 == height) return index + 1;
+                passPosition[coordinate.y() + 1][coordinate.x()] = 1;
                 queue.add(new Coordinate(x, y+1));
                 nextIndexCount++;
             }
 
-            passPosition[coordinate.y()][coordinate.x()] = 1;
             if (--indexCount == 0) {
                 index++;
                 indexCount = nextIndexCount;

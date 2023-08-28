@@ -1,7 +1,4 @@
-import hash.Phonecatmon
-import hash.완주하지못한선수
-import hash.의상
-import hash.전화번호목록
+import hash.*
 
 fun main() {
 //    println(Phonecatmon().solution(intArrayOf(3, 3, 3, 2, 2, 4)))
@@ -22,28 +19,33 @@ fun main() {
 //        )
 //    )
 
-    println(
-        의상().solution(
-            arrayOf(
-                arrayOf("yellow_hat", "headgear"),
-                arrayOf("blue_sunglasses", "eyewear"),
-                arrayOf("green_turban", "headgear"),
-            )
-//            arrayOf(
-//                arrayOf("crow_mask", "face"),
-//                arrayOf("blue_sunglasses", "face"),
-//                arrayOf("smoky_makeup", "face"),
-//            )
+//    println(
+//        의상().solution(
 //            arrayOf(
 //                arrayOf("yellow_hat", "headgear"),
 //                arrayOf("blue_sunglasses", "eyewear"),
 //                arrayOf("green_turban", "headgear"),
-//                arrayOf("crow_mask", "face"),
-//                arrayOf("blue_sunglasses", "face"),
-//                arrayOf("smoky_makeup", "face"),
 //            )
-        )
-    )
+////            arrayOf(
+////                arrayOf("crow_mask", "face"),
+////                arrayOf("blue_sunglasses", "face"),
+////                arrayOf("smoky_makeup", "face"),
+////            )
+////            arrayOf(
+////                arrayOf("yellow_hat", "headgear"),
+////                arrayOf("blue_sunglasses", "eyewear"),
+////                arrayOf("green_turban", "headgear"),
+////                arrayOf("crow_mask", "face"),
+////                arrayOf("blue_sunglasses", "face"),
+////                arrayOf("smoky_makeup", "face"),
+////            )
+//        )
+//    )
+
+    베스트앨범().solution(
+        genres = arrayOf("classic", "pop", "classic", "classic", "pop", "pop"),
+        plays = intArrayOf(500, 600, 150, 800, 2500, 600),
+    ).forEach(System.out::println)
 
 
 }

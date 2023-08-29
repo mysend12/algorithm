@@ -1,4 +1,5 @@
 import hash.*
+import stack_queue.같은_숫자는_싫어
 
 fun main() {
 //    println(Phonecatmon().solution(intArrayOf(3, 3, 3, 2, 2, 4)))
@@ -42,10 +43,13 @@ fun main() {
 //        )
 //    )
 
-    베스트앨범().solution(
-        genres = arrayOf("classic", "pop", "classic", "classic", "pop", "pop"),
-        plays = intArrayOf(500, 600, 150, 800, 2500, 600),
-    ).forEach(System.out::println)
+//    베스트앨범().solution(
+//        genres = arrayOf("classic", "pop", "classic", "classic", "pop", "pop"),
+//        plays = intArrayOf(500, 600, 150, 800, 2500, 600),
+//    ).forEach(System.out::println)
+        같은_숫자는_싫어().solution(
+            intArrayOf(4,4,4,3,3)
+        ).forEach(System.out::print)
 
 
 }

@@ -1,13 +1,22 @@
-import stack_queue.기능개발
+import stack_queue.올바른_괄호
 
 fun main() {
 
-    기능개발().solution(
-//        progresses = intArrayOf(93, 30, 55),
-//        speeds = intArrayOf(1, 30, 5),
-        progresses = intArrayOf(95, 90, 99, 99, 80, 99),
-        speeds = intArrayOf(1, 1, 1, 1, 1, 1),
-    ).forEach(System.out::print)
+    println(
+        올바른_괄호().solution(
+//            "()()"
+            "(())()"
+//            ")()("
+//            "(()("
+        )
+    )
+
+//    기능개발().solution(
+////        progresses = intArrayOf(93, 30, 55),
+////        speeds = intArrayOf(1, 30, 5),
+//        progresses = intArrayOf(95, 90, 99, 99, 80, 99),
+//        speeds = intArrayOf(1, 1, 1, 1, 1, 1),
+//    ).forEach(System.out::print)
 //    println(Phonecatmon().solution(intArrayOf(3, 3, 3, 2, 2, 4)))
 //    println(
 //        완주하지못한선수().solution(

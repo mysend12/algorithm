@@ -1,7 +1,13 @@
-import hash.*
-import stack_queue.같은_숫자는_싫어
+import stack_queue.기능개발
 
 fun main() {
+
+    기능개발().solution(
+//        progresses = intArrayOf(93, 30, 55),
+//        speeds = intArrayOf(1, 30, 5),
+        progresses = intArrayOf(95, 90, 99, 99, 80, 99),
+        speeds = intArrayOf(1, 1, 1, 1, 1, 1),
+    ).forEach(System.out::print)
 //    println(Phonecatmon().solution(intArrayOf(3, 3, 3, 2, 2, 4)))
 //    println(
 //        완주하지못한선수().solution(
@@ -47,9 +53,9 @@ fun main() {
 //        genres = arrayOf("classic", "pop", "classic", "classic", "pop", "pop"),
 //        plays = intArrayOf(500, 600, 150, 800, 2500, 600),
 //    ).forEach(System.out::println)
-        같은_숫자는_싫어().solution(
-            intArrayOf(4,4,4,3,3)
-        ).forEach(System.out::print)
+//        같은_숫자는_싫어().solution(
+//            intArrayOf(4,4,4,3,3)
+//        ).forEach(System.out::print)
 
 
 }

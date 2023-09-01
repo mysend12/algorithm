@@ -1,15 +1,24 @@
-import stack_queue.올바른_괄호
+import stack_queue.프로세스
 
 fun main() {
 
     println(
-        올바른_괄호().solution(
-//            "()()"
-            "(())()"
-//            ")()("
-//            "(()("
-        )
+        프로세스().solution(
+            priorities = intArrayOf(2, 1, 3, 2),
+            location = 2,
+//            priorities = intArrayOf(1, 1, 9, 1, 1, 1),
+//            location = 0,
+        ),
     )
+
+//    println(
+//        올바른_괄호().solution(
+////            "()()"
+//            "(())()"
+////            ")()("
+////            "(()("
+//        )
+//    )
 
 //    기능개발().solution(
 ////        progresses = intArrayOf(93, 30, 55),

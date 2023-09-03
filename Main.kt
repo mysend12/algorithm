@@ -1,15 +1,29 @@
-import stack_queue.프로세스
+import stack_queue.다리를_지나는_트럭
 
 fun main() {
 
     println(
-        프로세스().solution(
-            priorities = intArrayOf(2, 1, 3, 2),
-            location = 2,
-//            priorities = intArrayOf(1, 1, 9, 1, 1, 1),
-//            location = 0,
-        ),
+        다리를_지나는_트럭().solution(
+//            bridge_length = 2,
+//            weight = 10,
+//            truck_weights = intArrayOf(7, 4, 5, 6),
+//            bridge_length = 100,
+//            weight = 100,
+//            truck_weights = intArrayOf(10),
+            bridge_length = 100,
+            weight = 100,
+            truck_weights = intArrayOf(10, 10, 10, 10, 10, 10, 10, 10, 10, 10),
+        )
     )
+
+//    println(
+//        프로세스().solution(
+//            priorities = intArrayOf(2, 1, 3, 2),
+//            location = 2,
+////            priorities = intArrayOf(1, 1, 9, 1, 1, 1),
+////            location = 0,
+//        ),
+//    )
 
 //    println(
 //        올바른_괄호().solution(

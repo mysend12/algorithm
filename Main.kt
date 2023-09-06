@@ -1,20 +1,23 @@
-import stack_queue.다리를_지나는_트럭
+import stack_queue.주식가격
 
 fun main() {
+    주식가격().solution(
+        intArrayOf(1, 2, 3, 2, 3)
+    ).forEach { second -> println(second) }
 
-    println(
-        다리를_지나는_트럭().solution(
-//            bridge_length = 2,
-//            weight = 10,
-//            truck_weights = intArrayOf(7, 4, 5, 6),
+//    println(
+//        다리를_지나는_트럭().solution(
+////            bridge_length = 2,
+////            weight = 10,
+////            truck_weights = intArrayOf(7, 4, 5, 6),
+////            bridge_length = 100,
+////            weight = 100,
+////            truck_weights = intArrayOf(10),
 //            bridge_length = 100,
 //            weight = 100,
-//            truck_weights = intArrayOf(10),
-            bridge_length = 100,
-            weight = 100,
-            truck_weights = intArrayOf(10, 10, 10, 10, 10, 10, 10, 10, 10, 10),
-        )
-    )
+//            truck_weights = intArrayOf(10, 10, 10, 10, 10, 10, 10, 10, 10, 10),
+//        )
+//    )
 
 //    println(
 //        프로세스().solution(

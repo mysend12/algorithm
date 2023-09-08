@@ -1,9 +1,14 @@
+import heap.MaxHeapSort
 import stack_queue.주식가격
 
 fun main() {
-    주식가격().solution(
-        intArrayOf(1, 2, 3, 2, 3)
-    ).forEach { second -> println(second) }
+
+    MaxHeapSort().solution(intArrayOf(4, 1, 3, 2, 16, 9, 10, 14, 8, 7))
+        .forEach(System.out::println)
+
+//    주식가격().solution(
+//        intArrayOf(1, 2, 3, 2, 3)
+//    ).forEach { second -> println(second) }
 
 //    println(
 //        다리를_지나는_트럭().solution(

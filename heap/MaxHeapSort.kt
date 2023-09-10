@@ -17,7 +17,7 @@ class MaxHeapSort {
      * 이유는 힙정렬의 원소가 더 흩어져있어 캐시 친화도가 떨어지며, 포인터 연산을 많이 사용하여
      * 여기에 걸리는 오버헤드가 있기 때문이다.
      */
-    fun solution(heap: IntArray): IntArray {
+    fun heapSort(heap: IntArray): IntArray {
         buildMaxHeap(heap)
 
         for (i in heap.size - 1 downTo 1) {

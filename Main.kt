@@ -1,10 +1,20 @@
 import heap.MaxHeapSort
-import stack_queue.주식가격
+import heap.MaxHeapSortJava
+import heap.더_맵게
 
 fun main() {
 
-    MaxHeapSort().solution(intArrayOf(4, 1, 3, 2, 16, 9, 10, 14, 8, 7))
-        .forEach(System.out::println)
+    println(
+        더_맵게().solution(
+            intArrayOf(1, 2, 3, 9, 10, 12), 7
+        )
+    )
+
+//    MaxHeapSortJava().heapSort(intArrayOf(4, 1, 3, 2, 16, 9, 10, 14, 8, 7))
+//        .forEach(System.out::println)
+//
+//    MaxHeapSort().heapSort(intArrayOf(4, 1, 3, 2, 16, 9, 10, 14, 8, 7))
+//        .forEach(System.out::println)
 
 //    주식가격().solution(
 //        intArrayOf(1, 2, 3, 2, 3)

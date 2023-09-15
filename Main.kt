@@ -1,16 +1,21 @@
-import heap.디스크_컨트롤러
+import heap.이중우선순위큐
 
 fun main() {
 
-    println(
-        디스크_컨트롤러().solution(
-            arrayOf(
-                intArrayOf(0, 3),
-                intArrayOf(1, 9),
-                intArrayOf(2, 6),
-            )
-        )
-    )
+    이중우선순위큐().solution(
+//        arrayOf("I 16", "I -5643", "D -1", "D 1", "D 1", "I 123", "D -1")
+        arrayOf("I -45", "I 653", "D 1", "I -642", "I 45", "I 97", "D 1", "D -1", "I 333")
+    ).forEach { println(it) }
+
+//    println(
+//        디스크_컨트롤러().solution(
+//            arrayOf(
+//                intArrayOf(0, 3),
+//                intArrayOf(1, 9),
+//                intArrayOf(2, 6),
+//            )
+//        )
+//    )
 
 //    println(
 //        더_맵게().solution(

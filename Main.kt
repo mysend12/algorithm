@@ -1,14 +1,22 @@
-import heap.MaxHeapSort
-import heap.MaxHeapSortJava
-import heap.더_맵게
+import heap.디스크_컨트롤러
 
 fun main() {
 
     println(
-        더_맵게().solution(
-            intArrayOf(1, 2, 3, 9, 10, 12), 7
+        디스크_컨트롤러().solution(
+            arrayOf(
+                intArrayOf(0, 3),
+                intArrayOf(1, 9),
+                intArrayOf(2, 6),
+            )
         )
     )
+
+//    println(
+//        더_맵게().solution(
+//            intArrayOf(1, 2, 3, 9, 10, 12), 7
+//        )
+//    )
 
 //    MaxHeapSortJava().heapSort(intArrayOf(4, 1, 3, 2, 16, 9, 10, 14, 8, 7))
 //        .forEach(System.out::println)

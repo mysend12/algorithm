@@ -1,11 +1,20 @@
-import heap.이중우선순위큐
+import sort.K번째수
 
 fun main() {
 
-    이중우선순위큐().solution(
-//        arrayOf("I 16", "I -5643", "D -1", "D 1", "D 1", "I 123", "D -1")
-        arrayOf("I -45", "I 653", "D 1", "I -642", "I 45", "I 97", "D 1", "D -1", "I 333")
+    K번째수().solution(
+        array = intArrayOf(1, 5, 2, 6, 3, 7, 4),
+        commands = arrayOf(
+            intArrayOf(2, 5, 3),
+            intArrayOf(4, 4, 1),
+            intArrayOf(1, 7, 3),
+        )
     ).forEach { println(it) }
+
+//    이중우선순위큐().solution(
+////        arrayOf("I 16", "I -5643", "D -1", "D 1", "D 1", "I 123", "D -1")
+//        arrayOf("I -45", "I 653", "D 1", "I -642", "I 45", "I 97", "D 1", "D -1", "I 333")
+//    ).forEach { println(it) }
 
 //    println(
 //        디스크_컨트롤러().solution(

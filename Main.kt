@@ -1,15 +1,22 @@
-import sort.K번째수
+import sort.가장_큰_수
 
 fun main() {
 
-    K번째수().solution(
-        array = intArrayOf(1, 5, 2, 6, 3, 7, 4),
-        commands = arrayOf(
-            intArrayOf(2, 5, 3),
-            intArrayOf(4, 4, 1),
-            intArrayOf(1, 7, 3),
+    println(
+        가장_큰_수().solution(
+            intArrayOf(6, 10, 2), // "6210"
+//        intArrayOf(3, 30, 34, 5, 9), // "9534330"
+//            intArrayOf(1000,99, 898, 89) // 99898981000
         )
-    ).forEach { println(it) }
+    )
+//    K번째수().solution(
+//        array = intArrayOf(1, 5, 2, 6, 3, 7, 4),
+//        commands = arrayOf(
+//            intArrayOf(2, 5, 3),
+//            intArrayOf(4, 4, 1),
+//            intArrayOf(1, 7, 3),
+//        )
+//    ).forEach { println(it) }
 
 //    이중우선순위큐().solution(
 ////        arrayOf("I 16", "I -5643", "D -1", "D 1", "D 1", "I 123", "D -1")

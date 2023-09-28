@@ -1,14 +1,17 @@
-import sort.가장_큰_수
+import sort.H_Index
 
 fun main() {
+//    println(H_Index().solution(intArrayOf(3, 0, 6, 1, 5)))
+    println(H_Index().solution(intArrayOf(3, 0, 6, 4, 4, 5)))
+//    println(H_Index().solution(intArrayOf(0, 5, 6, 7, 8)))
+//    println(
+//        가장_큰_수().solution(
+//            intArrayOf(6, 10, 2), // "6210"
+////        intArrayOf(3, 30, 34, 5, 9), // "9534330"
+////            intArrayOf(1000,99, 898, 89) // 99898981000
+//        )
+//    )
 
-    println(
-        가장_큰_수().solution(
-            intArrayOf(6, 10, 2), // "6210"
-//        intArrayOf(3, 30, 34, 5, 9), // "9534330"
-//            intArrayOf(1000,99, 898, 89) // 99898981000
-        )
-    )
 //    K번째수().solution(
 //        array = intArrayOf(1, 5, 2, 6, 3, 7, 4),
 //        commands = arrayOf(

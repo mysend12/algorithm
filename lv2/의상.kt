@@ -4,7 +4,8 @@ fun main() {
     fun solution(clothes: Array<Array<String>>): Int {
         return clothes.groupBy { it[1] }
             .map { it.value.size }
-            .fold(1) { acc, i -> acc * (i + 1) } - 1
+            .fold(1) { acc, i -> acc * (i + 1) }
+            .minus(1)
     }
 
     println(
